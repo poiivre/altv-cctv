@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<title>CCTV BY SELENE-DESNA</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+	<link rel="stylesheet" href="main.css" />
+	<script src="vue.js"></script>
+	<script src="vue-scrollto.js"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Train+One&display=swap" rel="stylesheet"> 
+
+</head>
+<body>
+
+<div id="app">
+<template v-if="menuvisible">
+	<div id="cadre">
+		<div id="logiciel">
+			<div class="logo"><center><img src="images/cctv.png"></center></div>
+			<div class="title">{{ Title }}</div>
+			<div class="mini"><center>-</center></div>
+			<div class="cube"><center>□</center></div>
+			<div class="close" v-on:click="OFF()"><center>x</center></div>
+		</div>
+
+		<div id="panels" v-if="page == 'panels'">
+
+			<!-- <img src="images/back.png" id="paneloff" v-on:click="OFF()"> -->
+
+			<div id="CCTV" v-on:click="ListCCTV()">
+				<img src="images/cctv.png" :alt="CCTV">
+				<br/>{{ CCTV }}
+			</div>
+			
+			<div id="CompaniesCCTV" v-on:click="ListCompaniesCCTV()">
+				<img src="images/companies.png" :alt="CompaniesCCTV">
+				<br/>{{ CompaniesCCTV }}
+			</div>
+
+			<div id="policeCCTV" v-if="unlockpolice" v-on:click="ListPoliceCCTV()">
+				<img src="images/police.png" :alt="PoliceCCTV">
+				<br/>{{ PoliceCCTV }}
+			</div>
+
+			<!-- Make them look like it isnt usable -->
+			<div id="policeCCTV" v-if="!unlockpolice" class="locked">
+				<img src="images/police.png" :alt="PoliceCCTV">
+				<br/>{{ LOCKED }}
+			</div>
+
+
+
+		</div>
+
+		<div id="list" v-if="page == 'list'">
+			<!--<div id="camera" class="return" v-on:click="BacktoMenu()">{{ Return }}</div>-->
+			<div id="camera" v-for="cam in list" v-on:click="Camera(cam)">{{ cam.name }}</div>
+		</div>
+
+
+	</div>
+
+</template>
+<template v-if="movementvisible">
+	
+	<div id="logiciellarge">
+		<div class="logo"><center><img src="images/cctv.png"></center></div>
+		<div class="title">{{ Title }} : {{ camera.name }}</div>
+		<div class="st" v-if="camera.st == true" v-on:click="SeeThrough()"><center>{{ CamTextST }}</center></div>
+		<div class="mini"><center>-</center></div>
+		<div class="cube"><center>□</center></div>
+		<div class="close" v-on:click="BacktoList()"><center>x</center></div>
+	</div>
+
+	<template v-else>
+
+	</template>
+	
+
+</template>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Scripts -->
+<script src="app.js"></script>
+<script>
+	if ('alt' in window) {
+		alt.on('open', (ispolice) => {
+			app.ON(ispolice)
+		});
+		alt.on('close', () => {
+			alt.emit('BIP', "Turn");
+            app.menuvisible = false;
+            app.movementvisible = false;
+            app.unlockpolice = false;
+            alt.emit('KillCam');
+		});
+		alt.on('sendlist', (type, list) => { app[type] = list });
+	}
+</script>
+
+
+
+</body>
+</html>

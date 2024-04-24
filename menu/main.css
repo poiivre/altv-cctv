@@ -1,0 +1,269 @@
+html {
+    user-select: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+div#cadre {
+    margin-left: 8.5vw;
+    margin-top: 9.5vh;
+    width: 80vw;
+    height: 75vh;
+    position: absolute;
+    padding: 0;
+
+    border-radius: 5px;
+    border: solid 1vh rgb(60, 60, 60);
+
+    background-color: darkgrey;
+
+    text-align: center;
+}
+
+div#logiciel {
+    top: 0vh;
+    left: 0vw;
+    margin: 0;
+    padding: 0;
+    height: 4vh;
+    width: 100%;
+    background-color: rgb(60, 60, 60);
+    border-bottom: solid 0.5vh rgb(60, 60, 60);
+    position: absolute;
+    color: white;
+}
+
+#logiciel div.close {
+    top: 0vh;
+    right: 0vw;
+    height: 4vh;
+    width: 5vw;
+    line-height: 3.5vh;
+    font-size: 3vh;
+    position: absolute;
+    cursor: pointer;
+}
+#logiciel div.close:hover {
+    background-color: tomato;
+}
+#logiciel div.cube {
+    top: 0vh;
+    right: 5vw;
+    height: 4vh;
+    width: 5vw;
+    line-height: 3.5vh;
+    font-size: 3vh;
+    position: absolute;
+    cursor: pointer;
+    color: grey;
+}
+#logiciel div.mini {
+    top: 0vh;
+    right: 10vw;
+    height: 4vh;
+    width: 5vw;
+    line-height: 3.5vh;
+    font-size: 3vh;
+    position: absolute;
+    cursor: pointer;
+    color: grey;
+}
+#logiciel div.mini:hover,
+#logiciel div.cube:hover {
+    background-color: gray;
+}
+#logiciel div.title {
+    top: 0.2vh;
+    left: 5vw;
+    height: 4vh;
+    line-height: 3.5vh;
+    font-size: 3.5vh;
+    padding-left: 2vw;
+    position: absolute;
+}
+#logiciel div.logo {
+    top: 0vh;
+    left: 0.2vw;
+    height: 4vh;
+    width: 5vw;
+    position: absolute;
+}
+#logiciel div.logo img {
+    margin-top: 0.5vh;
+    height: 3vh;
+    width: 4vh;
+}
+
+div#logiciellarge {
+    top: 0vh;
+    left: 0vw;
+    height: 4vh;
+    width: 100%;
+    background-color: rgb(60, 60, 60);
+    border-bottom: solid 0.5vh rgb(60, 60, 60);
+    border-top: solid 0.5vh rgb(60, 60, 60);
+    position: absolute;
+    color: white;
+}
+
+#logiciellarge div.close {
+    top: 0vh;
+    right: 0vw;
+    height: 4vh;
+    width: 5vw;
+    line-height: 3.5vh;
+    font-size: 3vh;
+    position: absolute;
+    cursor: pointer;
+}
+#logiciellarge div.close:hover {
+    background-color: tomato;
+}
+#logiciellarge div.cube {
+    top: 0vh;
+    right: 5vw;
+    height: 3.7vh;
+    padding-top: 0.3vh;
+    width: 5vw;
+    line-height: 3.5vh;
+    font-size: 3vh;
+    position: absolute;
+    cursor: pointer;
+    color: grey;
+}
+#logiciellarge div.mini {
+    top: 0vh;
+    right: 10vw;
+    height: 3.7vh;
+    padding-top: 0.3vh;
+    width: 5vw;
+    line-height: 3.5vh;
+    font-size: 3vh;
+    position: absolute;
+    cursor: pointer;
+    color: grey;
+}
+#logiciellarge div.st {
+    top: 0vh;
+    right: 18vw;
+    height: 3.7vh;
+    width: 3vw;
+    line-height: 3.5vh;
+    font-size: 2.5vh;
+    padding-top: 0.3vh;
+    position: absolute;
+    cursor: pointer;
+}
+#logiciellarge div.mini:hover,
+#logiciellarge div.cube:hover,
+#logiciellarge div.st:hover {
+    background-color: gray;
+}
+#logiciellarge div.title {
+    top: 0.2vh;
+    left: 5vw;
+    height: 4vh;
+    line-height: 3.5vh;
+    font-size: 3.5vh;
+    padding-left: 2vw;
+    padding-top: 0.2vh;
+    position: absolute;
+}
+#logiciellarge div.logo {
+    top: 0vh;
+    left: 0.2vw;
+    height: 4vh;
+    width: 5vw;
+    position: absolute;
+    border-right: solid 0.5vh rgb(60, 60, 60);
+}
+#logiciellarge div.logo img {
+    margin-top: 0.5vh;
+    height: 3vh;
+    width: 4vh;
+}
+
+#panels {
+    margin-top: 10vh;
+    height: 55vh;
+    width: 70vw;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#panels div:hover {
+    transform: scale(1.15);
+    opacity: 0.8;
+}
+
+#panels div.locked:hover {
+    transform: scale(0.5);
+    opacity: 0.3;
+    background-color: rgb(60, 60, 60);
+}
+
+#panels div.locked {
+    background-color: #828489;
+    opacity: 0.3;
+}
+
+#panels div {
+    height: 55vh;
+    width: 20vw;
+    margin-left: 1.6vw;
+    margin-right: 1.6vw;
+    border-radius: 10px;
+    font-size: 1.9vw;
+    cursor: pointer;
+}
+
+#panels div img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    margin-bottom: 2vh;
+    height: 15vw;
+    width: 13vw;
+}
+
+#list {
+    margin-top: 10vh;
+    height: 60vh;
+    width: 70vw;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#list::-webkit-scrollbar {
+    display: none;
+}
+
+#list div#camera {
+    display: inline-grid;
+
+    height: 6vh;
+    width: 16vw;
+    margin-left: 0.6vw;
+    margin-right: 0.6vw;
+    border-radius: 10px;
+    font-size: 1.1vw;
+    line-height: 5vh;
+    /*background-color: #828489;
+    border: solid 0.5vh rgba(60, 60, 60, 0.781);*/
+    cursor: pointer;
+}
+
+#list div#camera:hover {
+    /*background-color: #828489;
+    border: solid 0.5vh rgb(60, 60, 60);*/
+    color: greenyellow;
+    cursor: pointer;
+    transform: scale(1.15);
+}
